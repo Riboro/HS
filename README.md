@@ -6,5 +6,6 @@
 
 # USE O COMANDO: pip install -r "requirements.txt"
 # USE O COMANDO: python manage.py runserver
-# ABRA O ARQUIVO: Project1.exe
+# ABRA O ARQUIVO: Project1_32.exe para a versão 32 bits
+# ABRA O ARQUIVO: Project1_64.exe para a versão 64 bits
 
