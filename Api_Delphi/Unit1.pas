@@ -38,7 +38,6 @@ type
 
 var
   Form1: TForm1;
-
 implementation
 
 {$R *.dfm}
@@ -47,6 +46,7 @@ procedure TForm1.btnCadastrarClick(Sender: TObject);
 begin
   pnlFormulario.Visible := True;
   pnlPesquisa.Visible := False;
+  LabelNumero.Caption := AnsiToUTF8('Número');
 end;
 
 
@@ -54,6 +54,7 @@ procedure TForm1.btnPesquisarClick(Sender: TObject);
 begin
   pnlFormulario.Visible := False;
   pnlPesquisa.Visible := True;
+  LabelNumeroPesquisa.Caption := AnsiToUTF8('Número');
 
 end;
 

@@ -46,9 +46,8 @@ object Form1: TForm1
     object LabelNumeroPesquisa: TLabel
       Left = 20
       Top = 60
-      Width = 53
+      Width = 3
       Height = 15
-      Caption = 'Número:'
     end
     object EditNumeroPesquisa: TEdit
       Left = 80
@@ -85,9 +84,8 @@ object Form1: TForm1
     object LabelNumero: TLabel
       Left = 20
       Top = 60
-      Width = 53
+      Width = 3
       Height = 15
-      Caption = 'Número:'
     end
     object EditNome: TEdit
       Left = 80
