@@ -48,7 +48,7 @@ object Form1: TForm1
       Top = 60
       Width = 53
       Height = 15
-      Caption = 'N'#195#186'mero:'
+      Caption = 'Número:'
     end
     object EditNumeroPesquisa: TEdit
       Left = 80
@@ -87,7 +87,7 @@ object Form1: TForm1
       Top = 60
       Width = 53
       Height = 15
-      Caption = 'N'#195#186'mero:'
+      Caption = 'Número:'
     end
     object EditNome: TEdit
       Left = 80
