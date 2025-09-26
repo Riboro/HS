@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
   System.Classes, Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs,
-  Vcl.StdCtrls, IdHTTP, IdSSLOpenSSL, Vcl.ExtCtrls;
+  Vcl.StdCtrls, IdHTTP, IdSSLOpenSSL, Vcl.ExtCtrls, IdCookieManager;
 
 type
     TForm1 = class(TForm)
@@ -64,24 +64,39 @@ var
   j: string;
   JsonToSend: TStringStream;
   HTTP: TIdHTTP;
+  CookieManager: TIdCookieManager;
   Response: string;
 begin
     HTTP := TIdHTTP.Create(nil);
-    HTTP.Request.CacheControl := 'no-cache';
+    //HTTP.Request.CacheControl := 'no-cache';
     HTTP.Request.ContentType  := 'application/json';
     HTTP.Request.ContentEncoding:= 'utf-8';
     try
     j:= '{"nome": "' + EditNome.Text +
           '","numero": "' + EditNumero.Text + '"}';
     JsonToSend := TStringStream.Create(j, TEncoding.UTF8);
+
     Response := HTTP.post('http://localhost:8000/registros/', JsonToSend);
+
     except
       on E: EIdHTTPProtocolException do
       begin
         if E.ErrorCode = 500 then
           ShowMessage('⚠ O banco de dados está cheio. Tente novamente mais tarde.')
+        else if E.ErrorCode = 404 then
+          try
+            Response := HTTP.get('http://localhost:8000/registros/VERIFICA_ERRO')
+          except
+            on ERROR: EIdHTTPProtocolException do
+              begin
+                if ERROR.ErrorCode = 301 then
+                  ShowMessage('O banco de dados chegou a 5 registros')
+                else
+                    ShowMessage('Servidor indisponível! Tente novamente mais tarde.');
+              end;  
+          end
         else
-          ShowMessage('Erro HTTP: ' + E.Message);
+          ShowMessage('Erro ');
       end;
     end;
     HTTP.Free;

@@ -6,6 +6,7 @@ class RegistroSerializer(serializers.ModelSerializer):
         model = Registro
         fields = ['nome', 'numero']
 
+
 class ListarIdentificadorRegistroSerializer(serializers.ModelSerializer):
     #registro = serializers.ReadOnlyField(source='Registro.id')
     class Meta:

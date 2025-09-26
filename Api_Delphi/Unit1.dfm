@@ -41,29 +41,30 @@ object Form1: TForm1
     Top = 116
     Width = 400
     Height = 300
-    TabOrder = 2
+    TabOrder = 1
     Visible = False
     object LabelNumeroPesquisa: TLabel
       Left = 20
-      Top = 60
-      Width = 3
+      Top = 20
+      Width = 53
       Height = 15
+      Caption = 'N'#195#186'mero:'
     end
     object EditNumeroPesquisa: TEdit
       Left = 80
-      Top = 57
+      Top = 17
       Width = 180
       Height = 23
-      TabOrder = 1
+      TabOrder = 0
       OnKeyPress = EditNumeroKeyPress
     end
     object btnPesquisa: TButton
       Left = 16
-      Top = 80
+      Top = 60
       Width = 100
       Height = 25
       Caption = 'Pesquisar'
-      TabOrder = 0
+      TabOrder = 1
       OnClick = btnListarClick
     end
   end
@@ -72,7 +73,7 @@ object Form1: TForm1
     Top = 116
     Width = 400
     Height = 300
-    TabOrder = 1
+    TabOrder = 2
     Visible = False
     object LabelNome: TLabel
       Left = 20
@@ -84,8 +85,9 @@ object Form1: TForm1
     object LabelNumero: TLabel
       Left = 20
       Top = 60
-      Width = 3
+      Width = 53
       Height = 15
+      Caption = 'N'#195#186'mero:'
     end
     object EditNome: TEdit
       Left = 80
@@ -104,7 +106,7 @@ object Form1: TForm1
     end
     object btnEnviar: TButton
       Left = 16
-      Top = 80
+      Top = 100
       Width = 100
       Height = 25
       Caption = 'Enviar'

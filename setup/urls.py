@@ -24,6 +24,6 @@ router.register('registros', RegistroViewSet, basename='Registro')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(router.urls) ),
+    path('', include(router.urls)),
     path('pesquisa/<int:registro_numero>', ListarIdentificadorRegistroViewSet.as_view()),
 ]
