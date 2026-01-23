@@ -35,6 +35,7 @@ CSRF_TRUSTED_ORIGINS = [
     'https://hs-2-z3h1.onrender.com/',
     'https://*.onrender.com',
 ]
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
