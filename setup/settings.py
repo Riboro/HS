@@ -30,7 +30,11 @@ if not SECRET_KEY:
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost','https://hs-2-z3h1.onrender.com/']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost','hs-2-z3h1.onrender.com/','.onrender.com']
+CSRF_TRUSTED_ORIGINS = [
+    'https://hs-2-z3h1.onrender.com/',
+    'https://*.onrender.com',
+]
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
